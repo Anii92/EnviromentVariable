@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace EnviromentVariables
 {
     class Program
     {
         static void Main(string[] args)
         {
             //Crea una variable de entorno desde PowerShell
-            PowerShell(@"C:\Users\ana.jayme\Documents\PowerShell\EnviromentVariable.ps1");
+            PowerShell(@"../../CreateEnviromentVariable.ps1");
             string value = GetEnviromentVariable("TestVariable");
             Console.WriteLine("El valor de la variable de entorno TestVariable es " + value);
             Console.WriteLine("Pulsa enter para cerrar el programa");
@@ -29,7 +31,7 @@ namespace ConsoleApp1
             //}
         }
 
-        private static void PowerShell(string scriptFile)
+        private static void PowerShell(String scriptFile)
         {
             InitialSessionState initialSessionState = InitialSessionState.CreateDefault();
             initialSessionState.ApartmentState = ApartmentState.STA;
