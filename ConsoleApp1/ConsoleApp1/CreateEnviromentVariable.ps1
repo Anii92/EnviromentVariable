@@ -1,2 +1,1 @@
-Write-Output "Hola mundo!"
-[Environment]::SetEnvironmentVariable("TestVariable", "Test value.", "User")
+[Environment]::SetEnvironmentVariable("TestVariable3", "Test value.3 ", "User");

@@ -16,8 +16,8 @@ namespace EnviromentVariables
         static void Main(string[] args)
         {
             //Crea una variable de entorno desde PowerShell
-            PowerShell(@"../../CreateEnviromentVariable.ps1");
-            string value = GetEnviromentVariable("TestVariable");
+            //PowerShell(@"../../CreateEnviromentVariable.ps1");
+            string value = GetEnviromentVariable("TestVariable2");
             Console.WriteLine("El valor de la variable de entorno TestVariable es " + value);
             Console.WriteLine("Pulsa enter para cerrar el programa");
             Console.ReadLine();
@@ -62,7 +62,7 @@ namespace EnviromentVariables
 
         private static string GetEnviromentVariable(string name)
         {
-            return Environment.GetEnvironmentVariable(name);
+            return Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.User);
         }
     }
 }
